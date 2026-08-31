@@ -25,10 +25,7 @@ button {
   border: 2px solid #333;
 }
 
-/* =========================
-   ゲーム画面
-========================= */
-
+/* ゲーム画面 */
 #game {
   position: fixed;
   inset: 0;
@@ -38,10 +35,7 @@ button {
   background: #9bdd77;
 }
 
-/* =========================
-   HUD
-========================= */
-
+/* HUD */
 #hud {
   position: fixed;
   top: 14px;
@@ -86,20 +80,11 @@ button {
   box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-#inventoryBtn:active,
-#fightBtn:active {
-  transform: translateY(2px);
-  box-shadow: none;
-}
-
 #fightBtn {
   background: #ffdfdf;
 }
 
-/* =========================
-   タブレット操作
-========================= */
-
+/* モバイル・タブレット操作 */
 #controls {
   position: fixed;
   left: 0;
@@ -107,14 +92,12 @@ button {
   bottom: 0;
 
   height: 190px;
-
   pointer-events: none;
 
   z-index: 20;
 }
 
-/* スティック */
-
+/* 左スティック */
 #stick {
   position: absolute;
 
@@ -130,6 +113,7 @@ button {
   background: rgba(255, 255, 255, 0.5);
 
   pointer-events: auto;
+  touch-action: none;
 }
 
 #knob {
@@ -149,8 +133,7 @@ button {
   pointer-events: none;
 }
 
-/* 攻撃・作業ボタン */
-
+/* 右側ボタン */
 #attackBtn,
 #actionBtn {
   position: absolute;
@@ -165,6 +148,7 @@ button {
   background: #fff;
 
   pointer-events: auto;
+  touch-action: manipulation;
 
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
 }
@@ -179,16 +163,7 @@ button {
   bottom: 26px;
 }
 
-#attackBtn:active,
-#actionBtn:active {
-  transform: translateY(3px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-}
-
-/* =========================
-   インベントリ
-========================= */
-
+/* インベントリ */
 #panel {
   position: fixed;
 
@@ -224,8 +199,6 @@ button {
 #panel h2 {
   margin: 0 0 18px;
   padding-right: 40px;
-
-  font-size: 24px;
 }
 
 #panel p {
@@ -245,7 +218,6 @@ button {
   border-radius: 50%;
 
   background: #f1f1f1;
-
   font-size: 20px;
 }
 
@@ -258,7 +230,6 @@ button {
   border-radius: 8px;
 
   background: #eee;
-
   font-weight: bold;
 }
 
@@ -279,8 +250,6 @@ button {
   border-radius: 10px;
 
   background: #fafafa;
-
-  font-size: 17px;
 }
 
 .row.item {
@@ -315,12 +284,6 @@ button {
   background: #fff;
 }
 
-#panel > button:active,
-.row button:active,
-.close:active {
-  transform: scale(0.97);
-}
-
 .danger {
   background: #ffd8d8 !important;
 }
@@ -336,10 +299,7 @@ button {
   border-top: 1px solid #ccc;
 }
 
-/* =========================
-   通知
-========================= */
-
+/* 通知 */
 #toast {
   position: fixed;
 
@@ -362,9 +322,7 @@ button {
   opacity: 0;
   pointer-events: none;
 
-  transition:
-    opacity 0.2s,
-    transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 
   z-index: 100;
 }
@@ -372,35 +330,10 @@ button {
 #toast.show {
   opacity: 1;
 
-  transform:
-    translateX(-50%)
-    translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
-/* =========================
-   PC
-========================= */
-
-@media (min-width: 900px) {
-  #controls {
-    height: 0;
-  }
-
-  #stick,
-  #attackBtn,
-  #actionBtn {
-    display: none;
-  }
-
-  #toast {
-    bottom: 30px;
-  }
-}
-
-/* =========================
-   小さい画面
-========================= */
-
+/* 小さいスマホ用 */
 @media (max-width: 500px) {
   #hud {
     gap: 6px;
